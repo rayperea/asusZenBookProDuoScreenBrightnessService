@@ -1,0 +1,18 @@
+# To Install this service, copy this file to /etc/systemd/system
+# and change ExecStart (below) to the real path to the updateOledBrightness.js file
+#
+# Next, execute the following commands
+# sudo systemctl enable updateOledBrightness.service
+# sudo systemctl start updateOledBrightness.service
+
+[Unit]
+Description=Poll and Update Screen Brightness
+
+[Service]
+# Change ExecStart to the correct path to the js
+ExecStart=/etc/systemd/system/updateOledBrightness.js
+Restart=always
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
